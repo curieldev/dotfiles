@@ -1,15 +1,18 @@
 #!/bin/bash
 
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
+
+echo $SCRIPT_PATH
 
 # Enable TearFree Option
-XORG_CONF_PATH=/etc/X11/xorg.conf.d/
+XORG_CONF_PATH=/etc/X11/xorg.conf.d
 
-ln -sv --backup=numbered $USER_HOME/git/dotfiles/xorg/20-intel.conf $XORG_CONF_PATH/20-intel.conf
+ln -sv --backup=numbered $SCRIPT_PATH/xorg/20-intel.conf $XORG_CONF_PATH/20-intel.conf
 
 # Configure sxhkdrc key bindings
 SXHKD_CONFIG_PATH=$USER_HOME/.config/sxhkd
-sudo -u $SUDO_USER ln -sv --backup=numbered $USER_HOME/git/dotfiles/sxhkd/sxhkdrc $SXHKD_CONFIG_PATH/sxhkdrc
+sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/sxhkd/sxhkdrc $SXHKD_CONFIG_PATH/sxhkdrc
 
 # Set LightDM Aether background image
 AETHER_WALLPAPERS_PATH=/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers
@@ -32,4 +35,5 @@ curl $ENDEAVOUROS_WALLPAPER_URL -o $ENDEAVOUROS_BACKGROUNDS_PATH/endeavouros-wal
 
 
 # Configure neovim
-sudo -u $SUDO_USER cp -v --backup=numbered --parents $USER_HOME/git/dotfiles/nvim/init.vim $USER_HOME/.config/
+mkdir -pv $USER_HOME/.config/nvim
+sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/nvim/init.vim $USER_HOME/.config/nvim/init.vim
