@@ -37,3 +37,6 @@ curl $ENDEAVOUROS_WALLPAPER_URL -o $ENDEAVOUROS_BACKGROUNDS_PATH/endeavouros-wal
 # Configure neovim
 mkdir -pv $USER_HOME/.config/nvim
 sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/nvim/init.vim $USER_HOME/.config/nvim/init.vim
+
+# Configure xfce4-terminal
+sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/xfce-term/terminalrc $USER_HOME/.config/xfce4/terminal/terminalrc
