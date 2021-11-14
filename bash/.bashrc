@@ -190,12 +190,11 @@ _Pacdiff() {
 ################################################################################
 ## Custom configuration
 
-## Auto-complete command from history
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-
 ## Aliases
 
 alias dfs='cd ~/git/dotfiles'
 alias edf='nvim ~/git/dotfiles/install.sh'
 alias v='nvim'
+
+## Ignore duplicated commands in history
+export HISTCONTROL=ignoredups
