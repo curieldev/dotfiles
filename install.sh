@@ -40,3 +40,6 @@ sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/nvim/init.vim $USER_HOM
 
 # Configure xfce4-terminal
 sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/xfce-term/terminalrc $USER_HOME/.config/xfce4/terminal/terminalrc
+
+# Configure bashrc
+sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/bash/.bashrc $USER_HOME/.bashrc
