@@ -142,16 +142,30 @@ super + {Left,Down,Up,Right}
 #
 
 # Multimedia keys
+
+# Volume Up
 XF86AudioRaiseVolume
   pactl set-sink-volume 0 +5%
 
-# Still muøltimedia
+# Volume Down
 XF86AudioLowerVolume
   pactl set-sink-volume 0 -5%
 
-# still
+# Mute
 XF86AudioMute
   pactl set-sink-mute 0 toggle
+
+# Play / Pause
+XF86AudioPlay
+  playerctl play-pause
+
+# Next
+XF86AudioNext
+  playerctl next
+
+# Previous
+XF86AudioPrev
+  playerctl previous
   
 # Brightness up
 XF86MonBrightnessUp
