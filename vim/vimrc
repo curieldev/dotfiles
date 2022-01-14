@@ -1,3 +1,8 @@
+filetype plugin indent on     " Allow auto-indenting depending on file type
+syntax on                     " Syntax highlighting
+set backspace=start,indent,eol " Allow me to backspace from everywhere
+set hidden
+
 set showmatch                 " Show matching 
 set ignorecase                " Case insensitive 
 set mouse=v                   " Middle-click paste with 
@@ -12,8 +17,6 @@ set number                    " Add line numbers
 set relativenumber            " Display numbers starting from current line
 set wildmode=longest,list     " Get bash-like tab completions
 set colorcolumn=120           " Set an 80 column border for good coding style
-filetype plugin indent on     " Allow auto-indenting depending on file type
-syntax on                     " Syntax highlighting
 set clipboard=unnamedplus     " Using system clipboard
 filetype plugin on
 set cursorline                " Highlight current cursorline

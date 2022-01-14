@@ -21,6 +21,9 @@ AETHER_WALLPAPER_URL=https://raw.githubusercontent.com/curieldev/resources/main/
 rm -vf $AETHER_WALLPAPERS_PATH/{*.png,*.jpeg,*.jpg}
 curl $AETHER_WALLPAPER_URL -o $AETHER_WALLPAPERS_PATH/Blue-PaperMario.jpg
 
+# Set File System Automount
+grep -q "ef0923e2-f348-460c-83c7-dc8339f58287" /etc/fstab && echo "File System with UUID ef0923e2-f348-460c-83c7-dc8339f58287 already in fstab" || echo "UUID=ef0923e2-f348-460c-83c7-dc8339f58287    /mnt/500    ext4    defaults    0    2" >> /etc/fstab
+
 # Set LightDM Aether icon
 ACCOUNTS_SVC_PATH=/var/lib/AccountsService
 AETHER_ICON_URL=https://raw.githubusercontent.com/curieldev/resources/main/img/curiel.png
@@ -34,9 +37,8 @@ ENDEAVOUROS_BACKGROUNDS_PATH=/usr/share/endeavouros/backgrounds
 curl $ENDEAVOUROS_WALLPAPER_URL -o $ENDEAVOUROS_BACKGROUNDS_PATH/endeavouros-wallpaper.png
 
 
-# Configure neovim
-mkdir -pv $USER_HOME/.config/nvim
-sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/nvim/init.vim $USER_HOME/.config/nvim/init.vim
+# Configure vim
+sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/vim/vimrc $USER_HOME/.vim/vimrc
 
 # Configure xfce4-terminal
 sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/xfce-term/terminalrc $USER_HOME/.config/xfce4/terminal/terminalrc

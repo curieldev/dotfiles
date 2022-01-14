@@ -193,8 +193,11 @@ _Pacdiff() {
 ## Aliases
 
 alias dfs='cd ~/git/dotfiles'
-alias edf='nvim ~/git/dotfiles/install.sh'
-alias v='nvim'
+alias edf='vim ~/git/dotfiles/install.sh'
+alias v='vim'
 
 ## Ignore duplicated commands in history
 export HISTCONTROL=ignoredups
+
+## Set git preferred editor
+export GIT_EDITOR=vim
