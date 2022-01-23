@@ -30,8 +30,9 @@ highlight ColorColumn ctermbg=DarkMagenta " Set ColorColumn's color
 
 let mapleader=" "             " Map leader key to space
 
-nnoremap <Leader>w :w<Enter>
-nnoremap <Leader>q :q<Enter>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>e :e $MYVIMRC<CR>
 imap kj <Esc>
 cmap kj <C-c> 
 
@@ -44,3 +45,9 @@ nnoremap J <C-d>
 nnoremap K <C-u>
 
 nnoremap <leader>so :so %<CR>
+
+call plug#begin()
+
+Plug 'habamax/vim-asciidoctor'
+
+call plug#end()

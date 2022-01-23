@@ -26,8 +26,9 @@ grep -q "ef0923e2-f348-460c-83c7-dc8339f58287" /etc/fstab && echo "File System w
 
 
 # Configure vim
-sudo -u $SUDO_USER mkdir -p  $USER_HOME/.vim
+sudo -u $SUDO_USER mkdir -p  $USER_HOME/.vim/autoload
 sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/.vim/vimrc $USER_HOME/.vim/vimrc
+sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/.vim/autoload/plug.vim $USER_HOME/.vim/autoload/plug.vim
 
 # Configure xfce4-terminal
 sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/xfce4/terminal/terminalrc $USER_HOME/.config/xfce4/terminal/terminalrc
@@ -37,3 +38,8 @@ sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/bash/.bashrc $USER_HOME
 
 # Configure reflector
 # /etc/reflector-simple.conf
+
+
+# Configure inputrc
+sudo -u $SUDO_USER ln -sv --backup=numbered $SCRIPT_PATH/.inputrc $USER_HOME/.inputrc
+
