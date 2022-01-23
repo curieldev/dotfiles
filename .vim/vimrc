@@ -49,5 +49,6 @@ nnoremap <leader>so :so %<CR>
 call plug#begin()
 
 Plug 'habamax/vim-asciidoctor'
+Plug 'lordm/vim-browser-reload-linux'
 
 call plug#end()
